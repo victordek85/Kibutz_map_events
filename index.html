@@ -346,7 +346,7 @@ if(!slug){
     document.getElementById('picklist').innerHTML=(window.KLIST||[]).map(k=>
       '<a class="focusable" href="?k='+encodeURIComponent(k.slug)+'">'+k.name+'</a>').join('');
     document.getElementById('picker').hidden=false;
-  });
+  }).catch(()=>{ document.body.innerHTML='<p style="padding:24px">אין עדיין מפות. יש להריץ את tools/build_kibbutz.py.</p>'; });
   return;
 }
 const base='kibbutzim/'+slug+'/';
@@ -524,7 +524,9 @@ function drawContext(g, C, s){
   c.beginPath();
   for(let i=0;i<KBOUND.length;i++){ const X=g.X(KBOUND[i][0]),Y=g.Y(KBOUND[i][1]); i?c.lineTo(X,Y):c.moveTo(X,Y); }
   c.closePath(); c.strokeStyle=C.bound; c.lineWidth=2.4*s; c.stroke();
-  // gate
+  // gate (its label box is reserved so spot names don't print over it)
+  const taken=[];
+  const free=b=>!taken.some(p=>!(b.x1<p.x0||b.x0>p.x1||b.y1<p.y0||b.y0>p.y1));
   if(KGATE){
     const gx=g.X(KGATE[0]), gy=g.Y(KGATE[1]);
     c.fillStyle=C.gate; c.beginPath(); c.arc(gx,gy,5.5*s,0,7); c.fill();
@@ -532,6 +534,8 @@ function drawContext(g, C, s){
     c.font='700 '+(12*s)+'px "Assistant",sans-serif'; c.textAlign='right'; c.textBaseline='middle';
     c.lineWidth=3*s; c.strokeStyle=C.panel; c.strokeText('שער הכניסה', gx-9*s, gy);
     c.fillStyle=C.gate; c.fillText('שער הכניסה', gx-9*s, gy);
+    const gw=c.measureText('שער הכניסה').width;
+    taken.push({x0:gx-9*s-gw-2, y0:gy-7*s, x1:gx+6*s, y1:gy+7*s});
   }
   // named spots: a green dot or little house (icon 'none' = an area name, no marker)
   if(g.spots) for(const sp of KSPOTS){
@@ -547,6 +551,10 @@ function drawContext(g, C, s){
     c.textAlign=sp.icon==='none'?'center':'right'; c.textBaseline='middle';
     c.font='700 '+(12*s)+'px "Assistant",sans-serif';
     const gap=sp.icon==='none'?0:(sp.icon==='house'?10:8)*s;
+    const tw=c.measureText(sp.name).width, X0=sp.icon==='none'?px-tw/2:px-gap-tw;
+    const box={x0:X0-2, y0:py-7*s, x1:X0+tw+2, y1:py+7*s};
+    if(!free(box)) continue;
+    taken.push(box);
     c.lineWidth=3*s; c.strokeStyle=C.panel; c.strokeText(sp.name, px-gap, py);
     c.fillStyle=C.anchorInk; c.fillText(sp.name, px-gap, py);
   }

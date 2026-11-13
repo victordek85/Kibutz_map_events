@@ -154,6 +154,12 @@ Still to do in phase 2 (not in v0.1): a deploy script that assembles the deploym
 
 ---
 
+## Results so far (v0.1, 2026-11-13)
+
+- **Ramat HaShofet** (never seen before): 349 buildings, 319 of them in the village (139 OSM + 210 Microsoft ML across the map box), 13 km of roads, 3.8 km of paths, the gate from OSM, and one landmark (רפת). It needs a person to add landmark names in `config.json`. See `docs/coverage-ramat-hashofet.md`.
+- **Yiftah** (reference): 275 buildings (207 OSM + 68 Microsoft ML). Of the 178 Marom house lots, 165 (93%) overlap a building outline, and 111 (62%) have a building's centre inside them. The gaps sit in the middle and north of the old core. Four of the 13 landmarks have no outline (ספרייה, סביון, מגרשי ספורט, בריכה) and show as spots. OSM's boundary for Yiftah includes the southern farm area, so the full view is wider than the old app's. See `docs/coverage-yiftah.md`.
+- The reference file read for Yiftah is `data/parcels_raw.geojson` (271 lots). The old app's `extra_parcels` (12 more) aren't included.
+
 ## Versions and branches
 
 - The version lives in `<meta name="app-version">` in `index.html` and starts at 0.0.0. The first release, `tools/release.py minor`, makes it 0.1.0.

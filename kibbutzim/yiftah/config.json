@@ -143,7 +143,9 @@
   "zoomed_in_only": [
     "ספרייה"
   ],
-  "hide_landmarks": [],
+  "hide_landmarks": [
+    "בריכת יפתח"
+  ],
   "areas": [
     {
       "kind": "water",

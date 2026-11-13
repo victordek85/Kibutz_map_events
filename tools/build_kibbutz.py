@@ -307,6 +307,8 @@ def build(slug, cfg, refetch):
     if boundary is None:
         raise SystemExit('No boundary found. Add "boundary" or source.bbox to config.json.')
     log(f'boundary: {how}')
+    if cfg['name'] == slug and heb(ptags):
+        cfg['name'] = heb(ptags)          # the Hebrew name from OSM, saved to config.json by main()
     lat0 = boundary.centroid.y
     mx, my = metres_per_deg(lat0)
     margin = cfg.get('margin_m', 250)
@@ -357,6 +359,8 @@ def build(slug, cfg, refetch):
             continue
         areas.append({'k': kind, 'g': multipoly_coords(g)})
         nm = heb(t)
+        if kind == 'cemetery':
+            nm = 'בית עלמין'      # OSM often names it after the kibbutz itself
         if nm and g.area * mx * my < 40000 and not PRIVATE_NAME.search(nm):
             p = label_point(g)
             spots.append({'name': nm, 'c': r6((p.x, p.y)), 'icon': 'none', 'src': 'osm'})
@@ -565,9 +569,7 @@ def main():
         jsave(cfg_path, cfg)
         log(f'created {os.path.relpath(cfg_path, ROOT)}')
     out = build(a.slug, cfg, a.fetch)
-    if cfg['name'] == a.slug and out['meta'].get('osm_place'):
-        cfg['name'] = out['meta']['osm_place']['name']
-        jsave(cfg_path, cfg)
+    jsave(cfg_path, cfg)
     if a.report:
         import coverage_report
         coverage_report.write(a.slug, coverage_report.YIFTAH_REF if a.slug == 'yiftah' else None)

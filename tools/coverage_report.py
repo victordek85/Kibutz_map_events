@@ -10,7 +10,7 @@ report keeps only totals: no names, no house numbers.
 import argparse, json, math, os, re, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from shapely.geometry import shape, Polygon, MultiPolygon  # noqa: E402
+from shapely.geometry import shape, Polygon, MultiPolygon, Point  # noqa: E402
 from build_kibbutz import P, metres_per_deg  # noqa: E402
 
 YIFTAH_REF = os.path.expanduser('~/Documents/Claude Files/Yiftah Map App/data/parcels_raw.geojson')
@@ -37,7 +37,7 @@ def reference_section(m, ref_path, mx, my):
     """Compare with a real lots layer: how many house lots have a building outline."""
     ref = json.load(open(ref_path, encoding='utf-8'))['features']
     blds = [(b, mp(b['geom'])) for b in m['units']]
-    rows = {}
+    rows, strict = {}, {}
     missing_pts = []
     for f in ref:
         if not f.get('geometry'):
@@ -45,6 +45,8 @@ def reference_section(m, ref_path, mx, my):
         kind = (f['properties'].get('MAKOR') or '').strip() or '?'
         lot = shape(f['geometry']).buffer(0)
         best_src = None
+        if any(lot.contains(Point(b['c'])) for b, _ in blds):
+            strict[kind] = strict.get(kind, 0) + 1
         for b, g in blds:
             if not g.intersects(lot):
                 continue
@@ -65,6 +67,10 @@ def reference_section(m, ref_path, mx, my):
     for k, r in sorted(rows.items(), key=lambda kv: -kv[1]['n']):
         has = r['n'] - r['none']
         out.append(f"| {k} | {r['n']} | {has} ({100 * has / r['n']:.0f}%) | {r['osm']} | {r['ms']} | {r['other']} | {r['none']} |")
+    out += ['', '"Has a building" counts a real overlap (at least 15 m², or 30% of the building), so one building '
+            'that crosses into a neighbour\'s lot counts for both. The strict count needs a building\'s centre inside the lot:', '']
+    for k, r in sorted(rows.items(), key=lambda kv: -kv[1]['n']):
+        out.append(f"- {k}: {strict.get(k, 0)} of {r['n']} ({100 * strict.get(k, 0) / r['n']:.0f}%) by the strict count.")
     if missing_pts:
         # where are the gaps? split the village bbox into a 3x3 grid
         xs = [p[0] for p in missing_pts]; ys = [p[1] for p in missing_pts]
