@@ -4,3 +4,4 @@ __pycache__/
 .cache/
 private/
 *.enc.json.tmp
+kibbutzim/*/lots*.js

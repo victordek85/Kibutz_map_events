@@ -1,0 +1,14 @@
+{
+  "name": "ramat-hashofet",
+  "name_en": "",
+  "source": {
+    "osm": "r21252389"
+  },
+  "margin_m": 250,
+  "landmarks": [],
+  "spots": [],
+  "gate": null,
+  "label_priority": [],
+  "zoomed_in_only": [],
+  "hide_landmarks": []
+}

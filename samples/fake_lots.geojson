@@ -1,0 +1,474 @@
+{
+ "type": "FeatureCollection",
+ "name": "FAKE sample lots (invented)",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "OBJECTID": 900,
+    "MISPAR": "100",
+    "SHEM_DAYAR": "משפחה לדוגמה 1",
+    "SUG": "מגרש",
+    "GUSH": "99999",
+    "HELKA": "1",
+    "ARNONA": "FAKE-SHOULD-BE-DROPPED"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       35.095,
+       32.61
+      ],
+      [
+       35.0952346,
+       32.61
+      ],
+      [
+       35.0952346,
+       32.6102171
+      ],
+      [
+       35.095,
+       32.6102171
+      ],
+      [
+       35.095,
+       32.61
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "OBJECTID": 901,
+    "MISPAR": "101",
+    "SHEM_DAYAR": "משפחה לדוגמה 2",
+    "SUG": "מגרש",
+    "GUSH": "99999",
+    "HELKA": "2",
+    "ARNONA": "FAKE-SHOULD-BE-DROPPED"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       35.0952986,
+       32.61
+      ],
+      [
+       35.0955332,
+       32.61
+      ],
+      [
+       35.0955332,
+       32.6102171
+      ],
+      [
+       35.0952986,
+       32.6102171
+      ],
+      [
+       35.0952986,
+       32.61
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "OBJECTID": 902,
+    "MISPAR": "102",
+    "SHEM_DAYAR": "",
+    "SUG": "מגרש",
+    "GUSH": "99999",
+    "HELKA": "3",
+    "ARNONA": "FAKE-SHOULD-BE-DROPPED"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       35.0955972,
+       32.61
+      ],
+      [
+       35.0958318,
+       32.61
+      ],
+      [
+       35.0958318,
+       32.6102171
+      ],
+      [
+       35.0955972,
+       32.6102171
+      ],
+      [
+       35.0955972,
+       32.61
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "OBJECTID": 903,
+    "MISPAR": "103",
+    "SHEM_DAYAR": "דוגמה + בדיקה",
+    "SUG": "מגרש",
+    "GUSH": "99999",
+    "HELKA": "4",
+    "ARNONA": "FAKE-SHOULD-BE-DROPPED"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       35.0958958,
+       32.61
+      ],
+      [
+       35.0961304,
+       32.61
+      ],
+      [
+       35.0961304,
+       32.6102171
+      ],
+      [
+       35.0958958,
+       32.6102171
+      ],
+      [
+       35.0958958,
+       32.61
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "OBJECTID": 904,
+    "MISPAR": "104",
+    "SHEM_DAYAR": "משפחה לדוגמה 5",
+    "SUG": "מגרש",
+    "GUSH": "99999",
+    "HELKA": "5",
+    "ARNONA": "FAKE-SHOULD-BE-DROPPED"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       35.095,
+       32.6097286
+      ],
+      [
+       35.0952346,
+       32.6097286
+      ],
+      [
+       35.0952346,
+       32.6099457
+      ],
+      [
+       35.095,
+       32.6099457
+      ],
+      [
+       35.095,
+       32.6097286
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "OBJECTID": 905,
+    "MISPAR": "105",
+    "SHEM_DAYAR": "מבנה ציבור לדוגמה",
+    "SUG": "מבנה",
+    "GUSH": "99999",
+    "HELKA": "6",
+    "ARNONA": "FAKE-SHOULD-BE-DROPPED"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       35.0952986,
+       32.6097286
+      ],
+      [
+       35.0955332,
+       32.6097286
+      ],
+      [
+       35.0955332,
+       32.6099457
+      ],
+      [
+       35.0952986,
+       32.6099457
+      ],
+      [
+       35.0952986,
+       32.6097286
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "OBJECTID": 906,
+    "MISPAR": "106",
+    "SHEM_DAYAR": "משפחה לדוגמה 7",
+    "SUG": "מגרש",
+    "GUSH": "99999",
+    "HELKA": "7",
+    "ARNONA": "FAKE-SHOULD-BE-DROPPED"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       35.0955972,
+       32.6097286
+      ],
+      [
+       35.0958318,
+       32.6097286
+      ],
+      [
+       35.0958318,
+       32.6099457
+      ],
+      [
+       35.0955972,
+       32.6099457
+      ],
+      [
+       35.0955972,
+       32.6097286
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "OBJECTID": 907,
+    "MISPAR": "107",
+    "SHEM_DAYAR": "משפחה לדוגמה 8",
+    "SUG": "מגרש",
+    "GUSH": "99999",
+    "HELKA": "8",
+    "ARNONA": "FAKE-SHOULD-BE-DROPPED"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       35.0958958,
+       32.6097286
+      ],
+      [
+       35.0961304,
+       32.6097286
+      ],
+      [
+       35.0961304,
+       32.6099457
+      ],
+      [
+       35.0958958,
+       32.6099457
+      ],
+      [
+       35.0958958,
+       32.6097286
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "OBJECTID": 908,
+    "MISPAR": "",
+    "SHEM_DAYAR": "",
+    "SUG": "מגרש",
+    "GUSH": "99999",
+    "HELKA": "9",
+    "ARNONA": "FAKE-SHOULD-BE-DROPPED"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       35.095,
+       32.6094572
+      ],
+      [
+       35.0952346,
+       32.6094572
+      ],
+      [
+       35.0952346,
+       32.6096743
+      ],
+      [
+       35.095,
+       32.6096743
+      ],
+      [
+       35.095,
+       32.6094572
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "OBJECTID": 909,
+    "MISPAR": "109",
+    "SHEM_DAYAR": "משפחה לדוגמה 10",
+    "SUG": "מגרש",
+    "GUSH": "99999",
+    "HELKA": "10",
+    "ARNONA": "FAKE-SHOULD-BE-DROPPED"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       35.0952986,
+       32.6094572
+      ],
+      [
+       35.0955332,
+       32.6094572
+      ],
+      [
+       35.0955332,
+       32.6096743
+      ],
+      [
+       35.0952986,
+       32.6096743
+      ],
+      [
+       35.0952986,
+       32.6094572
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "OBJECTID": 910,
+    "MISPAR": "110",
+    "SHEM_DAYAR": "משפחה לדוגמה 11",
+    "SUG": "מגרש",
+    "GUSH": "99999",
+    "HELKA": "11",
+    "ARNONA": "FAKE-SHOULD-BE-DROPPED"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       35.0955972,
+       32.6094572
+      ],
+      [
+       35.0958318,
+       32.6094572
+      ],
+      [
+       35.0958318,
+       32.6096743
+      ],
+      [
+       35.0955972,
+       32.6096743
+      ],
+      [
+       35.0955972,
+       32.6094572
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "OBJECTID": 911,
+    "MISPAR": "111",
+    "SHEM_DAYAR": "משפחה לדוגמה 12",
+    "SUG": "מגרש",
+    "GUSH": "99999",
+    "HELKA": "12",
+    "ARNONA": "FAKE-SHOULD-BE-DROPPED"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       35.0958958,
+       32.6094572
+      ],
+      [
+       35.0961304,
+       32.6094572
+      ],
+      [
+       35.0961304,
+       32.6096743
+      ],
+      [
+       35.0958958,
+       32.6096743
+      ],
+      [
+       35.0958958,
+       32.6094572
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}

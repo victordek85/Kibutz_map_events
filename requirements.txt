@@ -1,0 +1,6 @@
+# Python tools for the pipeline (.venv)
+duckdb>=1.1
+shapely>=2.0
+pyproj>=3.6
+pyshp>=2.3
+cryptography>=42
