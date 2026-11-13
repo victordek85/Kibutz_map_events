@@ -18,9 +18,10 @@ The first version: a plug-and-play copy of the Yiftah map tool that works for an
 - **An automatic map for any kibbutz**, built from free sources with one command (`tools/build_kibbutz.py <slug>`). The boundary, roads, footpaths and golf-cart paths, orchards, parks, water and named places come from OpenStreetMap. Building outlines come from Overture Maps: OSM buildings plus Microsoft's machine-learned buildings.
 - When every Overpass server is busy, the build falls back to the OSM API for the place itself and to Overture's copy of the OSM roads, landuse and water.
 - **A small `config.json` per kibbutz** for the things a person knows: landmark names, hand-placed spots (a clinic, a coffee cart), the gate, label priorities, and hand-drawn areas such as the pool or the central lawn.
-- **Two kibbutzim:** Yiftah (the reference) and Ramat HaShofet (a kibbutz the pipeline had never seen). Open one with `?k=yiftah` or `?k=ramat-hashofet`, or pick from a list.
+- **Two kibbutzim:** Yiftah (the reference) and Ramat HaShofet (a kibbutz the pipeline had never seen). Both show only what the free sources know. Yiftah's hand-made tags from the old app (landmark names, spots, the pool and lawn) wait in `kibbutzim/yiftah/manual.json` and aren't used yet. Open one with `?k=yiftah` or `?k=ramat-hashofet`, or pick from a list.
 - **Phase 2 is ready for the Marom lots layer.** `tools/load_lots.py` reads a GeoJSON or Shapefile (WGS84 or ITM) with field names set per kibbutz. With `?lots=1` the lots become the main view, with names, numbers and search, and the buildings become an optional **מבנים** layer. Lots can be encrypted with a per-kibbutz password; the app then asks for it and shows the map without names when it's skipped.
 - **Map credits** (© OpenStreetMap contributors, Overture Maps, Microsoft) appear on the map and at the bottom of every exported image.
+- After a map is rebuilt, phones load the new copy within an hour instead of keeping an old cached one.
 - A coverage report for each kibbutz in `docs/`, and a draft Hebrew request to Marom for the lots layer.
 
 ### Kept from Yiftah v1.1
