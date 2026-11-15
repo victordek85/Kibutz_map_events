@@ -351,7 +351,9 @@ if(!slug){
   return;
 }
 const base='kibbutzim/'+slug+'/';
-load(base+'map.js').then(async()=>{
+// A single-file export (tools/export_html.py) already holds KMAP; wait for the
+// rest of the page to parse so startMap exists.
+(window.KMAP?new Promise(r=>addEventListener('DOMContentLoaded',r)):load(base+'map.js')).then(async()=>{
   if(wantLots){
     try{ await load(base+'lots.js'); }
     catch(_){ try{ await load(base+'lots.enc.js'); window.KLOTS=await unlockLots(window.KLOTS_ENC); }catch(e){ console.info('no lots', e.message); } }

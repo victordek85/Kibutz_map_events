@@ -22,7 +22,8 @@ The first version: a plug-and-play copy of the Yiftah map tool that works for an
 - **Phase 2 is ready for the Marom lots layer.** `tools/load_lots.py` reads a GeoJSON or Shapefile (WGS84 or ITM) with field names set per kibbutz. With `?lots=1` the lots become the main view, with names, numbers and search, and the buildings become an optional **מבנים** layer. Lots can be encrypted with a per-kibbutz password; the app then asks for it and shows the map without names when it's skipped.
 - **Map credits** (© OpenStreetMap contributors, Overture Maps, Microsoft) appear on the map and at the bottom of every exported image.
 - After a map is rebuilt, phones load the new copy within an hour instead of keeping an old cached one.
-- A coverage report for each kibbutz in `docs/`, and a draft Hebrew request to Marom for the lots layer.
+- **A single-file export** for reviewers: `tools/export_html.py <slug>` writes `exports/<slug>.html`, the whole app and map in one file that opens on a phone straight from WhatsApp or mail, with no server.
+- A coverage report for each kibbutz in `docs/`, a draft Hebrew request to Marom for the lots layer, and a Yiftah-specific request for the minimal layers it needs.
 
 ### Kept from Yiftah v1.1
 - The three modes (houses, roads, free draw), two-finger pan and zoom, long-press to erase, landmark labels that never overlap, the caption step, the two images with copy and share, and the one-screen phone layout.

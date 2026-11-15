@@ -5,3 +5,4 @@ __pycache__/
 private/
 *.enc.json.tmp
 kibbutzim/*/lots*.js
+exports/

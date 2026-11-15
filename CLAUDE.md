@@ -36,6 +36,7 @@ The user prefers lots as the main view once a kibbutz has them. Don't switch tha
 | `tools/fetch.py` | Overpass (with mirrors and backoff), the OSM API, Nominatim and Overture/DuckDB. |
 | `tools/load_lots.py` | Phase 2: the lots loader (stub, tested only with fake data). |
 | `tools/coverage_report.py` | Writes `docs/coverage-<slug>.md`. |
+| `tools/export_html.py` | Writes `exports/<slug>.html` (git-ignored): one self-contained file with `map.js` inlined, for sending to a reviewer. Never used with lots. |
 | `tools/release.py` | Cuts a release. Same rules as Yiftah. |
 | `samples/fake_lots.geojson` | **Invented** lots for testing the loader: made-up names, plain rectangles. |
 | `docs/` | Coverage reports and the draft Hebrew request to Marom (`marom-request.he.md`). |
@@ -144,7 +145,7 @@ Suggested default: **B for every new kibbutz, A only with written approval.**
 
 ## Phase 2 plan
 
-1. The kibbutz orders **one layer** from Marom: "נכסים", with shapes and NUM, DAYAR, MAKOR, GUSH, HELKA (+ ORIG_ID), all features, as GeoJSON (or a full Shapefile) in WGS84 (or ITM with a `.prj`). The draft request is `docs/marom-request.he.md`.
+1. The kibbutz orders **one layer** from Marom: "נכסים", with shapes and NUM, DAYAR, MAKOR, GUSH, HELKA (+ ORIG_ID), all features, as GeoJSON (or a full Shapefile) in WGS84 (or ITM with a `.prj`). The draft request is `docs/marom-request.he.md`. Yiftah's own version, which also asks for a separate buildings layer because open mapping near the border is thin, is `docs/marom-request-yiftah.he.md`.
 2. Run `tools/load_lots.py <slug> <file> --map <field names if they differ> --out <deployment dir> [--password …]`.
 3. Copy `index.html` and `kibbutzim/<slug>/map.js` into the deployment, and set `kmap-default` and `kmap-lots`.
 4. In `config.json`, the landmark points now also name the lots that contain them.
